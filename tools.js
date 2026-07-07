@@ -1,20 +1,14 @@
-const tools = [
-  {
-    name: "ChatGPT",
-    category: "Chatbot",
-    description: "AI untuk belajar, coding, dan bisnis.",
-    url: "https://chatgpt.com"
-  },
-  {
-    name: "Canva AI",
-    category: "Design",
-    description: "Desain profesional dengan AI.",
-    url: "https://www.canva.com"
-  },
-  {
-    name: "Leonardo AI",
-    category: "Image",
-    description: "Generator gambar AI berkualitas tinggi.",
-    url: "https://leonardo.ai"
-  }
-];
+function searchTools(){
+const input=document.getElementById("search").value.toLowerCase();
+const cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+const title=card.querySelector("h2").textContent.toLowerCase();
+
+if(title.includes(input)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+}
