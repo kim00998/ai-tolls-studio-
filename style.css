@@ -583,3 +583,35 @@ border-radius:20
 
 } 
 
+body.light{
+background:#f8fafc;
+color:#111827;
+}
+
+body.light .navbar{
+background:#ffffff;
+}
+
+body.light .card{
+background:#ffffff;
+color:#111827;
+}
+
+body.light .card p{
+color:#475569;
+}
+
+body.light .stat-card{
+background:#ffffff;
+color:#111827;
+}
+
+body.light footer{
+background:#ffffff;
+color:#111827;
+}
+
+body.light .featured-card{
+background:linear-gradient(135deg,#2563eb,#60a5fa);
+}
+
