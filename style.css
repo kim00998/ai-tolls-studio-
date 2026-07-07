@@ -541,3 +541,33 @@ body.light footer{
 background:#ffffff;
 color:#111827;
 }
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+padding:40px 8%;
+}
+
+.stat-card{
+background:#1e293b;
+padding:30px;
+border-radius:15px;
+text-align:center;
+transition:.3s;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+.stat-card h2{
+font-size:36px;
+color:#38bdf8;
+}
+
+.stat-card p{
+margin-top:10px;
+color:#cbd5e1;
+}
