@@ -8,6 +8,8 @@ function tampilkan(data) {
         container.innerHTML += `
         <div class="card">
             <h2>${tool.name}</h2>
+            <img src="${tool.logo}" class="logo" alt="${tool.name}">
+<h2>${tool.name}</h2>
 
             <p>${tool.description}</p>
 
