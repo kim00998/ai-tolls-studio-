@@ -1,21 +1,38 @@
-const toolsContainer = document.getElementById("tools");
+const container=document.getElementById("tools");
+const search=document.getElementById("search");
 
-function tampilkanTools(data) {
-  toolsContainer.innerHTML = "";
+function tampilkan(data){
 
-  data.forEach(tool => {
-    toolsContainer.innerHTML += `
-      <div class="card">
-        <h2>${tool.name}</h2>
-        <p>${tool.description}</p>
-        <small>${tool.category}</small><br><br>
+container.innerHTML="";
 
-        <a href="${tool.url}" target="_blank">
-          <button>Kunjungi</button>
-        </a>
-      </div>
-    `;
-  });
+data.forEach(tool=>{
+
+container.innerHTML+=`
+<div class="card">
+<h2>${tool.name}</h2>
+<p>${tool.description}</p>
+
+<a href="${tool.url}" target="_blank">
+<button>Kunjungi</button>
+</a>
+
+</div>
+`;
+
+});
+
 }
 
-tampilkanTools(tools);
+tampilkan(tools);
+
+search.addEventListener("input",()=>{
+
+const hasil=tools.filter(tool=>
+
+tool.name.toLowerCase().includes(search.value.toLowerCase())
+
+);
+
+tampilkan(hasil);
+
+});
