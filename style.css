@@ -509,3 +509,35 @@ transition:.3s;
 .favorite-btn:hover{
 background:#dc2626;
 }
+
+/* Theme Button */
+
+#theme-toggle{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+}
+
+body.light{
+background:#f8fafc;
+color:#111827;
+}
+
+body.light .navbar{
+background:#ffffff;
+}
+
+body.light .card{
+background:#ffffff;
+color:#111827;
+border:1px solid #d1d5db;
+}
+
+body.light footer{
+background:#ffffff;
+color:#111827;
+}
