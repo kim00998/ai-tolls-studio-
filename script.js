@@ -1,1 +1,3 @@
-console.log("AI Tools Studio berhasil dijalankan!");
+function halo(){
+    alert("Selamat datang di AI Tools Studio!");
+}
