@@ -181,3 +181,35 @@ font-weight:bold;
     border-radius:12px;
     font-size:16px;
 }
+const tools=[
+{
+name:"ChatGPT",
+description:"AI Chatbot dari OpenAI",
+category:"Chatbot",
+url:"https://chatgpt.com"
+},
+{
+name:"Gemini",
+description:"AI dari Google",
+category:"Chatbot",
+url:"https://gemini.google.com"
+},
+{
+name:"Claude",
+description:"AI dari Anthropic",
+category:"Chatbot",
+url:"https://claude.ai"
+},
+{
+name:"Canva AI",
+description:"AI untuk desain",
+category:"Design",
+url:"https://www.canva.com"
+},
+{
+name:"Leonardo AI",
+description:"Generator gambar AI",
+category:"Image",
+url:"https://leonardo.ai"
+}
+];
