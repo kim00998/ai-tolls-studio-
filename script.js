@@ -18,13 +18,11 @@ function tampilkan(data) {
 
             <p>${tool.price}</p>
 
-            <a href="detail.html?
-name=${encodeURIComponent(tool.name)}
-&description=${encodeURIComponent(tool.description)}
-&category=${encodeURIComponent(tool.category)}
-&rating=${encodeURIComponent(tool.rating)}
-&url=${encodeURIComponent(tool.url)}">
-            </a>
+            <a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&url=${encodeURIComponent(tool.url)}">
+
+<button class="visit-btn">🚀 Lihat Detail</button>
+
+</a>
         </div>
         `;
     });
