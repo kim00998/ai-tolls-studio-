@@ -7,7 +7,6 @@ function tampilkan(data) {
     data.forEach(tool => {
         container.innerHTML += `
         <div class="card">
-            <h2>${tool.name}</h2>
             <img src="${tool.logo}" class="logo" alt="${tool.name}">
 <h2>${tool.name}</h2>
 
