@@ -117,3 +117,17 @@ cursor:pointer;
 .card button:hover{
 background:#00b8e6;
 }
+.search-box{
+text-align:center;
+padding:20px;
+}
+
+.search-box input{
+width:80%;
+max-width:500px;
+padding:12px;
+font-size:16px;
+border-radius:10px;
+border:none;
+outline:none;
+}
