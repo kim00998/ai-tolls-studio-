@@ -1,5 +1,4 @@
 const toolsContainer = document.getElementById("tools");
-const search = document.querySelector("input");
 
 function tampilkanTools(data) {
   toolsContainer.innerHTML = "";
@@ -9,6 +8,8 @@ function tampilkanTools(data) {
       <div class="card">
         <h2>${tool.name}</h2>
         <p>${tool.description}</p>
+        <small>${tool.category}</small><br><br>
+
         <a href="${tool.url}" target="_blank">
           <button>Kunjungi</button>
         </a>
@@ -18,15 +19,3 @@ function tampilkanTools(data) {
 }
 
 tampilkanTools(tools);
-
-search.addEventListener("keyup", () => {
-  const keyword = search.value.toLowerCase();
-
-  const hasil = tools.filter(tool =>
-    tool.name.toLowerCase().includes(keyword) ||
-    tool.description.toLowerCase().includes(keyword) ||
-    tool.category.toLowerCase().includes(keyword)
-  );
-
-  tampilkanTools(hasil);
-});
