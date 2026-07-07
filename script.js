@@ -9,7 +9,11 @@ data.forEach(tool=>{
 
 container.innerHTML+=`
 <div class="card">
+
+<span class="badge">${tool.category}</span>
+
 <h2>${tool.name}</h2>
+
 <p>${tool.description}</p>
 
 <a href="${tool.url}" target="_blank">
