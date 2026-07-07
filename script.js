@@ -35,6 +35,9 @@ ${tool.price}
 <a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&price=${encodeURIComponent(tool.price)}&url=${encodeURIComponent(tool.url)}">
 <button class="detail-btn">
 📖 Detail
+<button class="favorite-btn" onclick="toggleFavorite('${tool.name}')">
+❤️ Favorite
+</button>
 </button>
 </a>
 
