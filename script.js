@@ -1,77 +1,21 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+const search = document.querySelector("input");
+
+search.addEventListener("keyup", function(){
+
+const keyword = this.value.toLowerCase();
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+const text = card.innerText.toLowerCase();
+
+if(text.includes(keyword)){
+card.style.display="block";
+}else{
+card.style.display="none";
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:#0f172a;
-    color:white;
-}
+});
 
-header{
-    text-align:center;
-    padding:60px 20px;
-}
-
-h1{
-    font-size:42px;
-    color:#38bdf8;
-    margin-bottom:15px;
-}
-
-p{
-    color:#cbd5e1;
-    margin-bottom:25px;
-}
-
-input{
-    width:90%;
-    max-width:500px;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
-}
-
-#tools{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    padding:30px;
-}
-
-.card{
-    background:#1e293b;
-    border-radius:15px;
-    padding:20px;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h2{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-button{
-    margin-top:15px;
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
+});
