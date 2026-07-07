@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail AI Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="detail">
+
+<h1 id="nama"></h1>
+
+<p id="deskripsi"></p>
+
+<p><strong>Kategori:</strong> <span id="kategori"></span></p>
+
+<p><strong>Rating:</strong> <span id="rating"></span></p>
+
+<a id="kunjungi" target="_blank">
+<button>🚀 Kunjungi Website</button>
+</a>
+
+<br><br>
+
+<a href="index.html">⬅ Kembali</a>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("nama").innerText=params.get("name");
+document.getElementById("deskripsi").innerText=params.get("description");
+document.getElementById("kategori").innerText=params.get("category");
+document.getElementById("rating").innerText=params.get("rating");
+
+document.getElementById("kunjungi").href=params.get("url");
+</script>
+
+</body>
+</html>
