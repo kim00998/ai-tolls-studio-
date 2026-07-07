@@ -2,160 +2,50 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
     background:#0f172a;
     color:white;
 }
 
-header{
-    text-align:center;
-    padding:60px 20px;
-}
-
-h1{
-    font-size:42px;
-    color:#38bdf8;
-    margin-bottom:15px;
-}
-
-p{
-    color:#cbd5e1;
-    margin-bottom:25px;
-}
-
-input{
-    width:90%;
-    max-width:500px;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
-}
-
-#tools{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-    padding:30px;
-}
-
-.card{
-    background:#1e293b;
-    border-radius:15px;
-    padding:20px;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h2{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-button{
-    margin-top:15px;
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover{
-    background:#1d4ed8;
-}
-#tools{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-padding:40px;
-}
-
-.card{
-background:#1b263b;
-padding:20px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.3);
-text-align:center;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h2{
-color:#00d4ff;
-}
-
-.card p{
-color:#ddd;
-}
-
-.card button{
-margin-top:15px;
-padding:10px 20px;
-border:none;
-border-radius:8px;
-background:#00d4ff;
-color:#000;
-font-weight:bold;
-cursor:pointer;
-}
-
-.card button:hover{
-background:#00b8e6;
-}
-.search-box{
-text-align:center;
-padding:20px;
-}
-
-.search-box input{
-width:80%;
-max-width:500px;
-padding:12px;
-font-size:16px;
-border-radius:10px;
-border:none;
-outline:none;
-}
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 40px;
-background:#08111f;
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo{
-font-size:24px;
-font-weight:bold;
-color:#00d4ff;
+    font-size:24px;
+    font-weight:bold;
+    color:#38bdf8;
 }
 
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
 }
 
-nav a{
-text-decoration:none;
-color:white;
-font-weight:bold;
+.navbar a{
+    color:white;
+    text-decoration:none;
 }
+
+.navbar a:hover{
+    color:#38bdf8;
+}
+
 .hero{
     text-align:center;
     padding:80px 20px;
@@ -163,13 +53,11 @@ font-weight:bold;
 
 .hero h1{
     font-size:48px;
-    margin-bottom:15px;
-    color:#00d4ff;
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:18px;
-    color:#ccc;
+    color:#cbd5e1;
     margin-bottom:30px;
 }
 
@@ -178,38 +66,46 @@ font-weight:bold;
     max-width:500px;
     padding:15px;
     border:none;
-    border-radius:12px;
+    border-radius:10px;
     font-size:16px;
 }
-const tools=[
-{
-name:"ChatGPT",
-description:"AI Chatbot dari OpenAI",
-category:"Chatbot",
-url:"https://chatgpt.com"
-},
-{
-name:"Gemini",
-description:"AI dari Google",
-category:"Chatbot",
-url:"https://gemini.google.com"
-},
-{
-name:"Claude",
-description:"AI dari Anthropic",
-category:"Chatbot",
-url:"https://claude.ai"
-},
-{
-name:"Canva AI",
-description:"AI untuk desain",
-category:"Design",
-url:"https://www.canva.com"
-},
-{
-name:"Leonardo AI",
-description:"Generator gambar AI",
-category:"Image",
-url:"https://leonardo.ai"
+
+.kategori{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:30px;
 }
-];
+
+.kategori button{
+    padding:10px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#1e293b;
+    color:white;
+}
+
+.kategori button:hover{
+    background:#38bdf8;
+    color:black;
+}
+
+#tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,
