@@ -1,94 +1,162 @@
-const container = document.getElementById("tools");
-const search = document.getElementById("search");
+// ===============================
+// AI TOOLS STUDIO PRO
+// script.js
+// ===============================
 
-function tampilkan(data) {
-    container.innerHTML = "";
+const toolsContainer = document.getElementById("tools");
+const searchInput = document.getElementById("search");
+const categoryButtons = document.querySelectorAll(".kategori button");
 
-    data.forEach(tool => {
-      container.innerHTML += `
-<div class="card">
+let filteredTools = [...tools];
 
-<img src="${tool.logo}" class="logo">
+// ===============================
+// TAMPILKAN AI TOOLS
+// ===============================
 
-<div class="badge">${tool.category}</div>
+function tampilkanTools(data){
 
-<h2>${tool.name}</h2>
+    if(!toolsContainer) return;
 
-<p>${tool.description}</p>
+    toolsContainer.innerHTML="";
 
-<div class="rating">
-⭐ ${tool.rating}
-</div>
+    if(data.length===0){
 
-<div class="price">
-${tool.price}
-</div>
+        toolsContainer.innerHTML=`
+        <div class="no-data">
+            <h2>Tidak ada AI Tools ditemukan 😢</h2>
+        </div>
+        `;
 
-<div class="card-buttons">
+        return;
+    }
 
-<a href="${tool.url}" target="_blank">
-<button class="visit-btn">
-🌐 Kunjungi
-</button>
-</a>
+    data.forEach(tool=>{
 
-<a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&price=${encodeURIComponent(tool.price)}&url=${encodeURIComponent(tool.url)}">
-<button class="detail-btn">
-📖 Detail
-<button class="favorite-btn" onclick="toggleFavorite('${tool.name}')">
-❤️ Favorite
-</button>
-</button>
-</a>
+        toolsContainer.innerHTML+=`
 
-</div>
+        <div class="card">
 
-</div>
+            <img src="${tool.logo}" alt="${tool.name}">
 
-`;
-       
+            <div class="badge">
+                ${tool.category}
+            </div>
+
+            <h2>${tool.name}</h2>
+
+            <p>${tool.description}</p>
+
+            <div class="rating">
+                ${tool.rating}
+            </div>
+
+            <div class="price">
+                ${tool.price}
+            </div>
+
+            <div class="card-buttons">
+
+                <a href="${tool.url}" target="_blank">
+
+                    <button class="visit-btn">
+
+                        🌐 Kunjungi
+
+                    </button>
+
+                </a>
+
+                <a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&price=${encodeURIComponent(tool.price)}&url=${encodeURIComponent(tool.url)}">
+
+                    <button class="detail-btn">
+
+                        📖 Detail
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        `;
+
     });
+
 }
 
-tampilkan(tools);
+tampilkanTools(filteredTools);
 
-search.addEventListener("input", () => {
-    const keyword = search.value.toLowerCase();
+// ===============================
+// SEARCH
+// ===============================
 
-    const hasil = tools.filter(tool =>
-        tool.name.toLowerCase().includes(keyword) ||
-        tool.category.toLowerCase().includes(keyword) ||
-        tool.description.toLowerCase().includes(keyword)
-    );
+if(searchInput){
 
-    tampilkan(hasil);
+searchInput.addEventListener("input",function(){
+
+const keyword=this.value.toLowerCase();
+
+filteredTools=tools.filter(tool=>
+
+tool.name.toLowerCase().includes(keyword) ||
+
+tool.description.toLowerCase().includes(keyword) ||
+
+tool.category.toLowerCase().includes(keyword)
+
+);
+
+tampilkanTools(filteredTools);
+
 });
 
-function toggleFavorite(name){
+}
 
-let fav = JSON.parse(localStorage.getItem("favorites")) || [];
+// ===============================
+// FILTER KATEGORI
+// ===============================
 
-if(fav.includes(name)){
-fav = fav.filter(item => item !== name);
-alert("Dihapus dari Favorit");
+categoryButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const kategori=button.textContent;
+
+if(kategori==="Semua"){
+
+filteredTools=[...tools];
+
 }else{
-fav.push(name);
-alert("Ditambahkan ke Favorit");
-}
 
-localStorage.setItem("favorites", JSON.stringify(fav));
+filteredTools=tools.filter(tool=>tool.category===kategori);
 
 }
 
-// =========================
+tampilkanTools(filteredTools);
+
+});
+
+});
+
+// ===============================
 // DARK MODE
-// =========================
+// ===============================
 
-const themeBtn = document.getElementById("theme-toggle");
+const themeBtn=document.getElementById("theme-toggle");
 
 if(themeBtn){
 
-themeBtn.onclick = ()=>{
+if(localStorage.getItem("theme")==="light"){
+
+document.body.classList.add("light");
+
+themeBtn.innerHTML="☀️";
+
+}
+
+themeBtn.onclick=()=>{
 
 document.body.classList.toggle("light");
 
@@ -110,15 +178,22 @@ themeBtn.innerHTML="🌙";
 
 }
 
-if(localStorage.getItem("theme")==="light"){
+// ===============================
+// SCROLL TO TOP
+// ===============================
 
-document.body.classList.add("light");
+window.addEventListener("scroll",()=>{
 
-if(themeBtn){
+if(window.scrollY>300){
 
-themeBtn.innerHTML="☀️";
+document.title="🚀 AI Tools Studio";
+
+}else{
+
+document.title="AI Tools Studio";
 
 }
 
-}
+});
 
+console.log("✅ AI Tools Studio Pro berhasil dimuat");
