@@ -1,42 +1,40 @@
-const container=document.getElementById("tools");
-const search=document.getElementById("search");
+const container = document.getElementById("tools");
+const search = document.getElementById("search");
 
-function tampilkan(data){
+function tampilkan(data) {
+    container.innerHTML = "";
 
-container.innerHTML="";
+    data.forEach(tool => {
+        container.innerHTML += `
+        <div class="card">
+            <h2>${tool.name}</h2>
 
-data.forEach(tool=>{
+            <p>${tool.description}</p>
 
-container.innerHTML+=`
-<div class="card">
+            <p><strong>${tool.category}</strong></p>
 
-<span class="badge">${tool.category}</span>
+            <p>${tool.rating}</p>
 
-<h2>${tool.name}</h2>
+            <p>${tool.price}</p>
 
-<p>${tool.description}</p>
-
-<a href="${tool.url}" target="_blank">
-<button>Kunjungi</button>
-</a>
-
-</div>
-`;
-
-});
-
+            <a href="${tool.url}" target="_blank">
+                <button>🚀 Kunjungi</button>
+            </a>
+        </div>
+        `;
+    });
 }
 
 tampilkan(tools);
 
-search.addEventListener("input",()=>{
+search.addEventListener("input", () => {
+    const keyword = search.value.toLowerCase();
 
-const hasil=tools.filter(tool=>
+    const hasil = tools.filter(tool =>
+        tool.name.toLowerCase().includes(keyword) ||
+        tool.category.toLowerCase().includes(keyword) ||
+        tool.description.toLowerCase().includes(keyword)
+    );
 
-tool.name.toLowerCase().includes(search.value.toLowerCase())
-
-);
-
-tampilkan(hasil);
-
+    tampilkan(hasil);
 });
