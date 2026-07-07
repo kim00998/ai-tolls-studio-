@@ -1,94 +1,189 @@
-Yo<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tools Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools Studio Pro</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="logo">🤖 AI Tools Studio</div>
+<!-- NAVBAR -->
 
-    <ul>
-        <li><a href="kategori.html">Kategori</a></li>
-        <li><a href="#tools">AI Tools</a></li>
-        <li><a href="#kategori">Kategori</a></li>
-        <li><a href="tentang.html">Tentang</a></li>
-    </ul>
+<nav class="navbar">
+
+<div class="logo">
+
+🤖 AI Tools Studio
+
+</div>
+
+<ul class="menu">
+
+<li><a href="index.html">Beranda</a></li>
+
+<li><a href="tools.html">AI Tools</a></li>
+
+<li><a href="kategori.html">Kategori</a></li>
+
+<li><a href="tentang.html">Tentang</a></li>
+
+<li><a href="contact.html">Kontak</a></li>
+
+</ul>
+
 </nav>
 
-<section id="home" class="hero">
+<!-- HERO -->
+
+<section class="hero">
 
 <h1>Temukan AI Tools Terbaik 🚀</h1>
 
 <p>
-Lebih dari 100 AI Tools untuk Chatbot, Gambar,
-Video, Coding, Produktivitas, Bisnis, dan lainnya.
+
+Jelajahi ratusan AI terbaik untuk Chatbot, Coding, Design,
+Video, Image, Marketing, Productivity dan Bisnis.
+
 </p>
+
+<div class="search-box">
 
 <input
-id="search"
 type="text"
+id="search"
 placeholder="Cari AI Tools...">
 
+</div>
+
 </section>
 
-<section id="kategori" class="kategori">
+<!-- KATEGORI -->
+
+<section class="kategori">
 
 <button>Semua</button>
+
 <button>Chatbot</button>
+
 <button>Image</button>
+
 <button>Video</button>
-<button>Design</button>
+
 <button>Coding</button>
+
+<button>Design</button>
+
+<button>Marketing</button>
+
+<button>Writing</button>
+
+<button>Business</button>
 
 </section>
 
-<section id="tools"></section>
+<!-- TRENDING -->
 
-<section id="tentang" class="about">
+<section class="section">
 
-<h2>Tentang AI Tools Studio</h2>
+<h2>
+
+🔥 AI Trending
+
+</h2>
+
+<div id="trending-tools" class="grid">
+
+</div>
+
+</section>
+
+<!-- SEMUA TOOLS -->
+
+<section class="section">
+
+<h2>
+
+🤖 Semua AI Tools
+
+</h2>
+
+<div id="tools" class="grid">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<h2>
+
+Tentang AI Tools Studio
+
+</h2>
 
 <p>
-AI Tools Studio adalah direktori AI modern yang membantu
-pengguna menemukan AI terbaik untuk belajar,
-bisnis, desain, coding, dan produktivitas.
+
+AI Tools Studio adalah direktori AI modern
+yang membantu pengguna menemukan AI terbaik
+untuk belajar, bisnis, coding, desain,
+video, gambar dan produktivitas.
+
 </p>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
+<div class="footer-logo">
+
+🤖 AI Tools Studio
+
+</div>
+
 <p>
-© 2026 AI Tools Studio
+
+Direktori AI Modern Indonesia
+
+</p>
+
+<div class="footer-menu">
+
+<a href="index.html">Beranda</a>
+
+<a href="tools.html">AI Tools</a>
+
+<a href="kategori.html">Kategori</a>
+
+<a href="tentang.html">Tentang</a>
+
+<a href="contact.html">Kontak</a>
+
+</div>
+
+<p>
+
+© 2026 AI Tools Studio.
+All Rights Reserved.
+
 </p>
 
 </footer>
 
 <script src="data.js"></script>
-<script src="script.js"></script>
 
-<footer class="footer">
-    <div class="footer-content">
-        <h2>🤖 AI Tools Studio</h2>
-        <p>Temukan AI terbaik untuk produktivitas, desain, coding, bisnis, dan lainnya.</p>
-
-        <div class="footer-links">
-            <a href="index.html">Beranda</a>
-            <a href="tools.html">AI Tools</a>
-            <a href="kategori.html">Kategori</a>
-            <a href="tentang.html">Tentang</a>
-        </div>
-
-        <p class="copyright">
-            © 2026 AI Tools Studio. All Rights Reserved.
-        </p>
-    </div>
-</footer>
+<script src="app.js"></script>
 
 </body>
 </html>
