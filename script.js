@@ -1,21 +1,32 @@
+const toolsContainer = document.getElementById("tools");
 const search = document.querySelector("input");
 
-search.addEventListener("keyup", function(){
+function tampilkanTools(data) {
+  toolsContainer.innerHTML = "";
 
-const keyword = this.value.toLowerCase();
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach(card=>{
-
-const text = card.innerText.toLowerCase();
-
-if(text.includes(keyword)){
-card.style.display="block";
-}else{
-card.style.display="none";
+  data.forEach(tool => {
+    toolsContainer.innerHTML += `
+      <div class="card">
+        <h2>${tool.name}</h2>
+        <p>${tool.description}</p>
+        <a href="${tool.url}" target="_blank">
+          <button>Kunjungi</button>
+        </a>
+      </div>
+    `;
+  });
 }
 
-});
+tampilkanTools(tools);
 
+search.addEventListener("keyup", () => {
+  const keyword = search.value.toLowerCase();
+
+  const hasil = tools.filter(tool =>
+    tool.name.toLowerCase().includes(keyword) ||
+    tool.description.toLowerCase().includes(keyword) ||
+    tool.category.toLowerCase().includes(keyword)
+  );
+
+  tampilkanTools(hasil);
 });
