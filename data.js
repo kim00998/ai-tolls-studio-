@@ -1,11 +1,12 @@
 const tools = [
 {
-name:"ChatGPT",
-description:"AI Chatbot terbaik dari OpenAI.",
-category:"Chatbot",
-rating:"⭐ 4.9",
-price:"Free",
-url:"https://chatgpt.com"
+  name:"ChatGPT",
+  logo:"https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+  description:"AI Chatbot terbaik dari OpenAI.",
+  category:"Chatbot",
+  rating:"⭐ 4.9",
+  price:"Free",
+  url:"https://chatgpt.com"
 },
 
 {
