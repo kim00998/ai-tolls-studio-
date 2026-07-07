@@ -110,3 +110,46 @@ margin-bottom:15px;
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,
+
+.footer{
+background:#0b1220;
+padding:50px 20px;
+margin-top:60px;
+text-align:center;
+border-top:1px solid #1e293b;
+}
+
+.footer h2{
+color:#38bdf8;
+margin-bottom:15px;
+}
+
+.footer p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.footer-links{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:25px 0;
+}
+
+.footer-links a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#38bdf8;
+}
+
+.copyright{
+margin-top:20px;
+font-size:14px;
+color:#94a3b8;
+}
