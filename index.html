@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Tools Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Studio</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<nav>
+
+<nav class="navbar">
     <div class="logo">🤖 AI Tools Studio</div>
 
     <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#">AI Tools</a></li>
-        <li><a href="#">Kategori</a></li>
-        <li><a href="#">Tentang</a></li>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#tools">AI Tools</a></li>
+        <li><a href="#kategori">Kategori</a></li>
+        <li><a href="#tentang">Tentang</a></li>
     </ul>
 </nav>
 
-  <header class="hero">
-    <h1>🚀 AI Tools Studio</h1>
-    <p>Temukan AI terbaik untuk produktivitas, desain, coding, video, dan bisnis.</p>
+<section id="home" class="hero">
 
-    <input id="search" type="text" placeholder="🔍 Cari AI Tools...">
-  </header>  
-<section id="beranda" class="hero">
-<button class="active">Semua</button>
+<h1>Temukan AI Tools Terbaik 🚀</h1>
+
+<p>
+Lebih dari 100 AI Tools untuk Chatbot, Gambar,
+Video, Coding, Produktivitas, Bisnis, dan lainnya.
+</p>
+
+<input
+id="search"
+type="text"
+placeholder="Cari AI Tools...">
+
+</section>
+
+<section id="kategori" class="kategori">
+
+<button>Semua</button>
 <button>Chatbot</button>
 <button>Image</button>
 <button>Video</button>
-<button>Coding</button>
 <button>Design</button>
+<button>Coding</button>
 
 </section>
+
+<section id="tools"></section>
+
+<section id="tentang" class="about">
+
+<h2>Tentang AI Tools Studio</h2>
+
+<p>
+AI Tools Studio adalah direktori AI modern yang membantu
+pengguna menemukan AI terbaik untuk belajar,
+bisnis, desain, coding, dan produktivitas.
+</p>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 AI Tools Studio
+</p>
+
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
