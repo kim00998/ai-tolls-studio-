@@ -5,26 +5,45 @@ function tampilkan(data) {
     container.innerHTML = "";
 
     data.forEach(tool => {
-        container.innerHTML += `
-        <div class="card">
-            <img src="${tool.logo}" class="logo" alt="${tool.name}">
+      container.innerHTML += `
+<div class="card">
+
+<img src="${tool.logo}" class="logo">
+
+<div class="badge">${tool.category}</div>
+
 <h2>${tool.name}</h2>
 
-            <p>${tool.description}</p>
+<p>${tool.description}</p>
 
-            <p><strong>${tool.category}</strong></p>
+<div class="rating">
+⭐ ${tool.rating}
+</div>
 
-            <p>${tool.rating}</p>
+<div class="price">
+${tool.price}
+</div>
 
-            <p>${tool.price}</p>
+<div class="card-buttons">
 
-            <a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&url=${encodeURIComponent(tool.url)}">
-
-<button class="visit-btn">🚀 Lihat Detail</button>
-
+<a href="${tool.url}" target="_blank">
+<button class="visit-btn">
+🌐 Kunjungi
+</button>
 </a>
-        </div>
-        `;
+
+<a href="detail.html?name=${encodeURIComponent(tool.name)}&description=${encodeURIComponent(tool.description)}&category=${encodeURIComponent(tool.category)}&rating=${encodeURIComponent(tool.rating)}&price=${encodeURIComponent(tool.price)}&url=${encodeURIComponent(tool.url)}">
+<button class="detail-btn">
+📖 Detail
+</button>
+</a>
+
+</div>
+
+</div>
+
+`;
+       
     });
 }
 
