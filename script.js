@@ -80,3 +80,45 @@ localStorage.setItem("favorites", JSON.stringify(fav));
 
 }
 
+// =========================
+// DARK MODE
+// =========================
+
+const themeBtn = document.getElementById("theme-toggle");
+
+if(themeBtn){
+
+themeBtn.onclick = ()=>{
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+
+localStorage.setItem("theme","light");
+
+themeBtn.innerHTML="☀️";
+
+}else{
+
+localStorage.setItem("theme","dark");
+
+themeBtn.innerHTML="🌙";
+
+}
+
+};
+
+}
+
+if(localStorage.getItem("theme")==="light"){
+
+document.body.classList.add("light");
+
+if(themeBtn){
+
+themeBtn.innerHTML="☀️";
+
+}
+
+}
+
