@@ -63,3 +63,20 @@ search.addEventListener("input", () => {
 
     tampilkan(hasil);
 });
+
+function toggleFavorite(name){
+
+let fav = JSON.parse(localStorage.getItem("favorites")) || [];
+
+if(fav.includes(name)){
+fav = fav.filter(item => item !== name);
+alert("Dihapus dari Favorit");
+}else{
+fav.push(name);
+alert("Ditambahkan ke Favorit");
+}
+
+localStorage.setItem("favorites", JSON.stringify(fav));
+
+}
+
